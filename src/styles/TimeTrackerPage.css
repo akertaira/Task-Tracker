@@ -1,0 +1,422 @@
+/* src/styles/TimeTrackerPage.css */
+.time-tracker-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: calc(100vh - 80px);
+  border-radius: 20px;
+}
+
+/* Шапка */
+.tt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+}
+
+.tt-header h1 {
+  font-size: 1.6rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.tt-stats {
+  display: flex;
+  gap: 25px;
+}
+
+.tt-stat {
+  text-align: center;
+}
+
+.tt-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #6366f1;
+}
+
+.tt-stat-label {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* ИИ-панель */
+.ai-planner-panel {
+  margin-bottom: 20px;
+}
+
+.ai-planner-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ai-planner-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
+.ai-suggestions {
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.ai-suggestions h4 {
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+.ai-suggestion-card {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 4px solid #f59e0b;
+}
+
+.ai-suggestion-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.ai-icon {
+  font-size: 1.5rem;
+}
+
+.ai-title {
+  font-weight: 700;
+  color: #92400e;
+}
+
+.ai-confidence {
+  font-size: 0.8rem;
+  color: #b45309;
+  margin-left: auto;
+}
+
+.ai-suggestion-content {
+  margin-bottom: 15px;
+}
+
+.ai-suggestion-content p {
+  margin: 8px 0;
+  color: #78350f;
+}
+
+.ai-suggestion-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.accept-btn, .reject-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.accept-btn {
+  background: #10b981;
+  color: white;
+}
+
+.accept-btn:hover {
+  background: #059669;
+  transform: scale(1.02);
+}
+
+.reject-btn {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.reject-btn:hover {
+  background: #e2e8f0;
+}
+
+.ai-placeholder {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+}
+
+.ai-example {
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+/* Навигация */
+.tt-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.tt-nav-btn, .tt-today-btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1e293b;
+  transition: all 0.2s;
+}
+
+.tt-nav-btn:hover, .tt-today-btn:hover {
+  background: #6366f1;
+  color: white;
+}
+
+/* Заголовки дней */
+.tt-week-header {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tt-week-day-name {
+  text-align: center;
+  padding: 12px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  color: white;
+}
+
+.day-short {
+  display: block;
+  font-size: 1rem;
+}
+
+.day-full {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* Временные слоты */
+.tt-time-slots {
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.time-labels {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.time-label-header {
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.time-label {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+/* Расписание */
+.tt-week-schedule {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.tt-day-schedule {
+  min-width: 120px;
+}
+
+.tt-day-date {
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+/* Ячейка временного слота */
+.tt-slot-cell {
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+  border-radius: 10px;
+  padding: 4px;
+  transition: all 0.2s;
+  cursor: pointer;
+  overflow-y: auto;
+}
+
+.tt-slot-cell.today {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.tt-slot-cell.drag-enabled {
+  border: 2px dashed #6366f1;
+}
+
+.tt-slot-cell:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.02);
+}
+
+/* Задача в слоте */
+.tt-slot-task {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 6px 8px;
+  margin-bottom: 4px;
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  transition: all 0.2s;
+  border-left: 3px solid;
+}
+
+.tt-slot-task:active {
+  cursor: grabbing;
+}
+
+.tt-slot-task:hover {
+  transform: translateX(3px);
+  background: #f1f5f9;
+}
+
+.tt-slot-task.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.tt-slot-task.high {
+  border-left-color: #ef4444;
+  background: #fee2e2;
+}
+
+.tt-slot-task.medium {
+  border-left-color: #f59e0b;
+  background: #fef3c7;
+}
+
+.tt-slot-task.low {
+  border-left-color: #10b981;
+  background: #d1fae5;
+}
+
+.task-title-short {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+}
+
+.task-status {
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Легенда */
+.tt-legend {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #1e293b;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.legend-color.high { background: #ef4444; }
+.legend-color.medium { background: #f59e0b; }
+.legend-color.low { background: #10b981; }
+
+.legend-drag {
+  font-size: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .tt-week-schedule {
+    min-width: 800px;
+  }
+  
+  .time-labels {
+    width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tt-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .tt-stats {
+    justify-content: center;
+  }
+  
+  .tt-week-header {
+    min-width: 800px;
+  }
+}

@@ -1,0 +1,282 @@
+/* src/styles/SecurityTestPage.css */
+.security-test {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.security-test h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.security-test h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 2px;
+}
+
+.test-section {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.test-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #6366f1;
+}
+
+.test-section h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.test-section h2::before {
+  content: '🔐';
+  font-size: 1.2rem;
+}
+
+.test-section button {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.test-section button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+}
+
+.test-section button:active {
+  transform: translateY(0);
+}
+
+.test-section p {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #f8fafc;
+  border-radius: 12px;
+  color: #475569;
+  font-size: 0.9rem;
+  border-left: 3px solid #6366f1;
+}
+
+.success {
+  color: #10b981 !important;
+  background: #d1fae5 !important;
+  border-left-color: #10b981 !important;
+  font-weight: 600;
+}
+
+.error {
+  color: #ef4444 !important;
+  background: #fee2e2 !important;
+  border-left-color: #ef4444 !important;
+}
+
+/* Предупреждения безопасности */
+.security-warning {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-left: 4px solid #f59e0b;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.security-warning p {
+  margin: 0;
+  color: #92400e;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.security-warning .warning-icon {
+  font-size: 1.2rem;
+}
+
+/* Индикатор статуса */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.status-pass {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.status-fail {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.status-warning {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+/* Список проверок */
+.checklist {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+}
+
+.checklist h3 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.checklist-checkbox.checked {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+.checklist-checkbox.checked::after {
+  content: '✓';
+  font-size: 12px;
+}
+
+.checklist-label {
+  flex: 1;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .security-test {
+    padding: 20px;
+    margin: 15px;
+  }
+  
+  .security-test h1 {
+    font-size: 1.6rem;
+  }
+  
+  .test-section {
+    padding: 20px;
+  }
+  
+  .test-section h2 {
+    font-size: 1.1rem;
+  }
+  
+  .test-section button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .security-test {
+    padding: 15px;
+  }
+  
+  .security-test h1 {
+    font-size: 1.4rem;
+  }
+  
+  .test-section {
+    padding: 15px;
+  }
+  
+  .checklist-item {
+    flex-wrap: wrap;
+  }
+  
+  .checklist-label {
+    width: 100%;
+    margin-left: 32px;
+    margin-top: 5px;
+  }
+}

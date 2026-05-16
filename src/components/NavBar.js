@@ -1,3 +1,4 @@
+// src/components/NavBar.jsx
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/NavBar.css';
@@ -25,6 +26,14 @@ function NavBar() {
             className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
           >
             Задачи
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink 
+            to="/tracker" 
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+          >
+            Календарь
           </NavLink>
         </li>
         <li className="nav-item">

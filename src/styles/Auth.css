@@ -1,0 +1,115 @@
+/* src/styles/Auth.css */
+.two-factor-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content h2 {
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.qr-container {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+.secret-code {
+  font-family: monospace;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  background: #f1f5f9;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.generate-btn,
+.next-btn,
+.verify-btn,
+.skip-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.2s;
+}
+
+.generate-btn {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.next-btn,
+.verify-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+}
+
+.skip-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.code-input {
+  width: 200px;
+  padding: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: 4px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.code-input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}

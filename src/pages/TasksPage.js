@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTasks } from '../context/TaskContext';
-import TaskForm from '../components/TaskForm';
+import TaskForm from '../components/TaskForm/TaskForm';
 import TaskFilter from '../components/TaskFilter';
 import TaskStats from '../components/TaskStats';
 import Calendar from '../components/Calendar';
@@ -23,10 +23,10 @@ function TasksPage() {
     isDateFilterActive,
     hoveredTask,
     activeButton,
-    searchTerm, 
+    searchTerm,
     setHoveredTask,
     setActiveButton,
-    handleDateSelect,
+    handleDateSelect,      
     clearDateFilter,
     deleteTask,
     toggleTaskStatus,
@@ -37,6 +37,28 @@ function TasksPage() {
     closeModal,
     updateTask
   } = useTasks();
+
+  // Функция для добавления задачи
+  const handleAddTask = async (taskData) => {
+    console.log('📝 Добавление задачи:', taskData);
+    try {
+      await addTask(taskData);
+      console.log('✅ Задача добавлена успешно');
+    } catch (error) {
+      console.error('❌ Ошибка добавления:', error);
+    }
+  };
+
+  // Функция для обновления задачи
+  const handleUpdateTask = async (taskData) => {
+    console.log('📝 Обновление задачи:', taskData);
+    try {
+      await updateTask(taskData);
+      console.log('✅ Задача обновлена успешно');
+    } catch (error) {
+      console.error('❌ Ошибка обновления:', error);
+    }
+  };
 
   return (
     <div className="tasks-page">
@@ -55,11 +77,14 @@ function TasksPage() {
 
       <div className="tasks-container">
         <div className="sidebar">
-          <TaskForm />
+          <TaskForm 
+            onSubmit={handleAddTask}
+            submitButtonText="➕ Добавить задачу"
+          />
           
           <Calendar 
             tasks={tasks}
-            onDateSelect={handleDateSelect}
+            onDateSelect={handleDateSelect}  
             selectedDate={selectedDate}
           />
           
@@ -119,10 +144,10 @@ function TasksPage() {
         </div>
       </div>
 
-      {isModalOpen && (
+      {isModalOpen && editingTask && (
         <Modal 
           task={editingTask}
-          onSave={updateTask}
+          onSave={handleUpdateTask}
           onCancel={closeModal}
           categories={categories}
         />

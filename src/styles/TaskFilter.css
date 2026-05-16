@@ -1,3 +1,11 @@
+/* src/styles/TaskFilter.css */
+:root {
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --glass-background: rgba(255, 255, 255, 0.95);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+  --shadow-elevation: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+}
+
 .task-filter-container {
   background: var(--glass-background);
   backdrop-filter: blur(10px);
@@ -19,6 +27,11 @@
   height: 200%;
   background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
   animation: rotate 20s linear infinite reverse;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .filter-title {
